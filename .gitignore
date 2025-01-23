@@ -8,6 +8,7 @@ node_modules
 .DS_Store
 *.idea
 .idea/*
+/node_modules
 assets/img
 assets/fonts
 assets/uswds/

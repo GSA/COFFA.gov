@@ -1,0 +1,33 @@
+{
+  "name": "coffa.gov",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+   "preinstall": "npx npm-force-resolutions",
+    "start": "bundle exec jekyll serve",
+    "build-cards": "node assets/buildCards.js"
+  },
+  "dependencies": {
+    "@uswds/uswds": "3.8.1",
+    "csv": "^6.0.5",
+    "csv-writer": "^1.6.0",
+    "jquery": "3.6.4",
+    "react-redux": "^7.2.9",
+    "striptags": "^3.2.0",
+    "dompurify": "^3.2.3"
+  },
+  "devDependencies": {
+    "a11y": "^0.5.1",
+    "jquery": "3.6.4",
+    "minimist": "^1.2.8",
+    "rimraf": "^3.0.2"
+  },
+  "overrides": {
+    "cross-spawn": "^6.0.6",
+    "trim": ">=0.0.3",
+    "tough-cookie": ">=4.1.4",
+    "got": ">=11.8.5",
+    "trim-newlines": ">=5.0.0"
+  }
+
+}

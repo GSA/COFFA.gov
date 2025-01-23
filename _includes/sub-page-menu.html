@@ -1,0 +1,127 @@
+{% comment %}
+To modify the menu system, you are welcome to edit this HTML directly or you can look inside _config.yml
+where we provide an easy way to manage your navigation system
+{% endcomment %}
+
+<header class="usa-header usa-header--extended" role="banner">
+    <div class="usa-navbar">
+        <div class="usa-logo" id="logo">
+
+            {% if include.page_type == 'cxo' %}
+            <h1 class="margin-0 clearfix font-ui-xl">
+                <a href="{{ site.baseurl }}/cxo-fellows/" accesskey="1" title="CXO Page" aria-label="CXO Page">
+                    <img class="cxo-logo-size" src="{{ site.baseurl }}/assets/images/logos/CXOFellows.png" alt="CXO logo">
+                </a>
+            </h1>
+            {% endif %}
+
+            {% if include.page_type == 'frpc' %}
+            <h1 class="margin-0 clearfix font-ui-xl ">
+                <a href="{{ site.baseurl }}/frpc/" accesskey="1" class="usa-logo-text" title="FRPC Page"
+                   aria-label="FRPC Page">
+                    <em class="text-red"> <abbr title="Federal Real Property Council">FRPC</abbr></em>
+                    <span class="font-body-md frpcSubText" style="display: block;">Federal Real Property Council</span>
+                </a>
+            </h1>
+            {% endif %}
+
+            {% if include.page_type == 'jfmip' %}
+            <div class="margin-0 clearfix font-ui-xl ">
+                <em class="usa-logo-text">
+                    <a href="{{ site.baseurl }}/jfmip/" accesskey="1" title="Joint Financial Management Improvement Program" aria-label="Joint Financial Management Improvement Program">
+                        <img class="logo-size  jfmip-logo-size" src="{{ site.jfmip-logo | prepend: site.baseurl }}"
+                             alt="Joint Financial Management Improvement Program logo">
+                    </a>
+                </em>
+            </div>
+            {% endif %}
+
+            {% if include.page_type == 'payment-accuracy' %}
+            <p class="margin-0 clearfix font-ui-xl text-bold">
+                <em class="usa-logo-text">
+                    <a href="https://www.paymentaccuracy.gov" accesskey="1" title="Payment Accuracy Page"
+                       aria-label="Payment Accuracy Page">
+                        PaymentAccuracy
+                    </a>
+                </em>
+            </p>
+            {% endif %}
+
+            {% if include.page_type == 'coffa' %}
+            <p class="margin-0 clearfix font-ui-xl text-bold">
+                <em class="usa-logo-text">
+                    <a href="https://www.paymentaccuracy.gov" accesskey="1" title="COFFA Page"
+                       aria-label="COFFA Page">
+                        COFFA
+                    </a>
+                </em>
+            </p>
+            {% endif %}
+
+        </div>
+        <!-- <div><a class="margin-1em font-sans-md text-underline connectToCFO" href="https://www.cfo.gov">&#10094; &nbsp;
+                Connect to CFO</a></div> -->
+        <button class="usa-menu-btn">Menu</button>
+    </div>
+    <nav role="navigation" class="usa-nav">
+        <div class="usa-nav__inner">
+            <button class="usa-nav__close"><img alt="close" src="{{ site.baseurl }}/assets/img/close.svg"></button>
+
+            {% if include.page_type == 'payment-accuracy' %}
+            <ul class="usa-nav__primary usa-accordion" data-site-base-url="{{ site.baseurl }}">
+                {% for nav_item in include.primary_navigation %}
+                {% assign basedir = page.url | remove_first: '/' | split: '/' | first | lstrip %}
+                {% assign linkdir = nav_item.url |  replace: "/", ""  | lstrip %}
+                {% capture siteurl %}{{ site.baseurl }}{% if site.baseurl contains '/preview/' %}/payment-accuracy{% endif %}{% endcapture%}
+                <li class="usa-nav__primary-item">
+                    <a class="usa-nav__link{% if basedir == linkdir %} usa-current{% endif %}"
+                        href="{{ nav_item.url | prepend: siteurl }}"><span>{{ nav_item.name | escape }}</span></a>
+                </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+
+            {% if include.page_type == 'jfmip' %}
+            <ul class="usa-nav__primary usa-accordion">
+                {% for nav_item in include.primary_navigation %}
+                {% assign basedir = page.url | remove_first: '/' | split: '/' | first | lstrip %}
+                {% assign linkdir = nav_item.url |  replace: "/", ""  | lstrip %}
+                {% if nav_item.children %}
+                {% assign nav_id = 'jfmip-navigation-' | append: forloop.index %}
+                <li class="usa-nav__primary-item">
+                    <button class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="{{ nav_id }}"><span class="header-menu-text">{{ nav_item.name | escape }}</span></button>
+                    <ul id="{{ nav_id }}" class="usa-nav__submenu" hidden="">
+                        {% for subnav_item in nav_item.children %}
+                        <li class="usa-nav__submenu-item">
+                            <a href="{{ subnav_item.url | prepend: site.baseurl }}">{{ subnav_item.name | escape }}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                {% else %}
+                <li class="usa-nav__primary-item">
+                    <a class="usa-nav__link{% if basedir == linkdir %} usa-current{% endif %}"
+                       href="{{ nav_item.url | prepend: site.baseurl}}"><span>{{ nav_item.name | escape }}</span></a>
+                </li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+            {% endif %}
+
+            {% if include.page_type == 'frpc' %}
+            <div class="usa-nav__secondary" style="bottom: 2.75rem !important">
+                {% else %}
+                <div class="usa-nav__secondary secondary-nav-padding">
+                    {% endif %}
+                    <ul class="usa-nav__secondary-links">
+                        {% for nav_item in include.secondary_navigation %}
+                        <li class="usa-nav__secondary-item">
+                            <a href="{{ nav_item.url }}">{{ nav_item.name | escape }}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    {% include searchgov/form.html searchgov=site.searchgov affiliate=site.searchgov.affiliate %}
+                </div>
+            </div>
+    </nav>
+</header>
