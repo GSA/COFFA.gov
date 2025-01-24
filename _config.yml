@@ -21,7 +21,7 @@
 email: contact@example.gov
 description: >- # this means to ignore newlines until "baseurl:"
   Agency Name (EAC) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean et sapien a leo auctor scelerisque quis nec magna. Sed dictum ante a risus vehicula facilisis.
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/" # the subpath of your site, e.g. /blog
 # url: "https://example.gov" # the base hostname & protocol for your site, e.g. http://example.com
 coffabaseurl: ""
 logo: /assets/images/logos/CFO-Logo-Color.svg
@@ -64,7 +64,6 @@ dap_agency: GSA
 # SSA     - Social Security Administration
 
 
-
 # Site Navigation
 primary_navigation:
 - name: About Us
@@ -79,10 +78,10 @@ primary_navigation:
 - name: Major Initiatives
   url: "/"
   children:
-  - name: Uniform Guidance
+  - name: Uniform Guidance232121
     url: "/uniform-guidance-coffa/"
 #     - name: Training
-#      url: "/coffa/training-coffa/"
+#      url: "training-coffa/"
 - name: Resources
   url: "/resources/#focus_area=.federal-financial-assistance&sub_focus_area=*&type=*&source=*&fiscal_year=*"
 
@@ -134,7 +133,7 @@ primary_navigation_coffa:
   - name: Uniform Guidance
     url: "/uniform-guidance-coffa/"
 #     - name: Training
-#      url: "/coffa/training-coffa/"
+#      url: "training-coffa/"
 - name: Resources
   url: "/resources/#focus_area=.federal-financial-assistance&sub_focus_area=*&type=*&source=*&fiscal_year=*"
 

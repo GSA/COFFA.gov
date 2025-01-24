@@ -28,7 +28,7 @@ keyword: COFFA Priority Areas, COFFA Council, CFOC members, Members
             {% for bio in site.leadership-coffa %}
             {% if bio.bio-image %}
             <div class="tablet:grid-col-6 container padding-105">
-                <a href="{{ site.baseurl }}{{ bio.permalink }}" class="height-full display-block text-no-underline text-ink">
+                <a href="{{ site.baseurl }}/../{{ bio.permalink }}"class="height-full display-block text-no-underline text-ink">
                     <div class="left">
                         <img class="photo" src="{{ site.baseurl }}{{ bio.bio-image }}" alt="{{bio.bio-image-alt-text }} portrait">
                     </div>
@@ -40,7 +40,7 @@ keyword: COFFA Priority Areas, COFFA Council, CFOC members, Members
             </div>
             {% else %}
             <div class="tablet:grid-col-4 container padding-105">
-                <a href="{{ site.baseurl }}{{ bio.permalink }}" class="height-full display-block text-no-underline text-ink">
+                <a href="{{ site.baseurl }}/../{{ bio.permalink }}" class="height-full display-block text-no-underline text-ink">
                     <div class="left">
                         <img class="seal" src="{{ site.baseurl }}/assets/images/agency-seals/{{bio.department | slugify}}.png" alt="{{ bio.department }} seal">
                     </div>
