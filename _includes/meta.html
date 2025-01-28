@@ -1,0 +1,95 @@
+{% comment %}
+You shouldn't have to edit this page very often. But if you want to modify some of the meta-data for the
+site, this is the place to do it.
+{% endcomment %}
+{% assign canonical = page.permalink %}
+{% if page.canonical %}
+  {% assign canonical = page.canonical %}
+{% endif %}
+
+<head>
+    <!-- Basic Page Needs
+      ================================================== -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="index,follow">
+    <!-- Mobile Specific Metas
+      ================================================== -->
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title and meta description
+      ================================================== -->
+    <script src="{{ site.baseurl }}/assets/js/uswds-init.min.js?{{ site.time | date: '%s%N' }}"></script>
+    {% if page.url contains "cxo-fellows" or page.url contains "payment-accuracy" or page.url contains "frpc" or page.url contains "jfmip" %}
+    <title>{{page.title}}</title>
+    <meta property="og:title" content="{{page.title}}">
+    {% else %}
+    <title>CFO.gov | {{page.title}}</title>
+    <meta property="og:title" content="CFO.gov | {{page.title}}">
+    {% endif %}
+
+    <!-- <meta name="description" content="{{page.description}}"> -->
+    <meta name="keyword" content="{{page.keyword}}">
+
+    {% if page.filters == "cxo-fellows" or page.url contains "cxo-fellows" %}
+    <meta name="image" property="og:image" content="https://www.cfo.gov/assets/images/logos/cxo-preview-large.png">
+    <meta name="description" property="og:description" content="{{page.filler}}">
+    {% else %}
+    <meta name="image" property="og:image" content="{{site.baseurl}}/assets/images/logos/cfo-preview.png">
+    <meta name="description" property="og:description" content="{{page.description}}">
+    {% endif %}
+
+    <meta property="og:type" content="article">
+    <link rel="canonical" href="{{site.baseurl}}/{{canonical}}">
+    <meta property="og:url" content="{{site.baseurl}}/">
+    <!-- Favicons
+      ================================================== -->
+    <!-- 128x128 -->
+    <link rel="shortcut icon" href="{{ site.baseurl }}/assets/images/FAVICON-CFO-1.svg">
+    <link rel="icon" href="{{ site.baseurl }}/assets/images/FAVICON-CFO-1.svg">
+    <!-- 192x192, as recommended for Android
+      http://updates.html5rocks.com/2014/11/Support-for-theme-color-in-Chrome-39-for-Android
+      -->
+    <link rel="icon" sizes="192x192" href="{{ site.baseurl }}/assets/images/FAVICON-CFO-1.svg">
+    <!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+    <link rel="apple-touch-icon-precomposed" href="{{ site.baseurl }}/assets/images/FAVICON-CFO-1.svg">
+    <!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ site.baseurl }}/assets/images/FAVICON-CFO-1.svg">
+    <!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ site.baseurl }}/assets/images/FAVICON-CFO-1.svg">
+    <!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ site.baseurl }}/assets/images/FAVICON-CFO-1.svg">
+    <!-- CSS
+      ================================================== -->
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/slick.css?{{ site.time | date: '%s%N' }}">
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/slick-theme.css?{{ site.time | date: '%s%N' }}">
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/magnific-popup.css?{{ site.time | date: '%s%N' }}">
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/index.css?{{ site.time | date: '%s%N' }}">
+
+
+    {% if page.url contains '/payment-accuracy/'
+    or page.url contains '/jfmip/'
+    or page.url contains '/frpc/'
+    or page.url contains '/cxo-fellows/' %}
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/main-page.css?{{ site.time | date: '%s%N' }}">
+    {% elsif page.url contains '' %}
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/main-page-blue.css?{{ site.time | date: '%s%N' }}">
+    {% else %}
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/main-page-green.css?{{ site.time | date: '%s%N' }}">
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/career-planning.css?{{ site.time | date: '%s%N' }}">
+    {% endif %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    {% if page.use_jqui %}
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">{% endif %}
+
+    <script src="{{ site.baseurl }}/assets/js/search.js?{{ site.time | date: '%s%N' }}"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.0.7/css/dataTables.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/fixedcolumns/5.0.0/css/fixedColumns.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/select/2.0.2/css/select.dataTables.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.5/css/dataTables.dataTables.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/rowreorder/1.5.0/css/rowReorder.dataTables.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/3.0.3/css/responsive.dataTables.css">
+    
+</head>
