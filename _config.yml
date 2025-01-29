@@ -161,7 +161,7 @@ footer:
 # 3. Add your site/affiliate name here.
 searchgov:
   endpoint: https://search.usa.gov # You should not change this.
-  affiliate: cfoc # replace this with your search.gov account
+  affiliate: coffa # replace this with your search.gov account
   access_key: dk-f6f76YuY6m8Cpq02DCrLQQ6lutzZdhkQDYC4hw-I= # This is placeholder. Not private.
   # This renders the results within the page instead of sending to user to search.gov.
   inline: true
