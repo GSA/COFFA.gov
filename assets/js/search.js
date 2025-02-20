@@ -1,5 +1,3 @@
-import DOMPurify from 'dompurify';
-
 document.addEventListener("DOMContentLoaded", function () {
     var searchResults = document.getElementById("search-results");
     var pathParts = window.location.pathname.split("/payment-accuracy/");
@@ -7,10 +5,10 @@ document.addEventListener("DOMContentLoaded", function () {
         var formElement = document.getElementById("search_form");
         formElement.action = pathParts[0] + '/payment-accuracy/search/';
     }
-    var pathPartsffa = window.location.pathname.split("");
-    if(pathPartsffa.length === 2) {
+    var pathPartsCoffa = window.location.pathname.split("/coffa/");
+    if(pathPartsCoffa.length === 2) {
         var formElement = document.getElementById("search_form");
-        formElement.action = pathPartsffa[0] + 'search/';
+        formElement.action = pathPartsCoffa[0] + '/coffa/search/';
     }
     if (searchResults !== null) {
         var searchgovParams = document.getElementById("searchgov-params");
@@ -46,9 +44,9 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(function (posts) {
                 totalResults = posts.web.total;
                 document.getElementById("search-params").innerHTML =
-                    DOMPurify.sanitize(urlParams.get("query"));
+                    urlParams.get("query");
                 document.getElementById("search-keyword").innerHTML =
-                    DOMPurify.sanitize(urlParams.get("query"));
+                    urlParams.get("query");
                 document.getElementById("results-count").innerHTML = totalResults;
 
                 if (posts.web.results.length > 0) {
@@ -107,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         pagerLinks +=
             '<span class="margin-2">Page ' +
-            encodeHTML(page) +
+            page +
             " of " +
             Math.ceil(totalResults / resultsPerPage) +
             "</span>";
@@ -125,13 +123,5 @@ document.addEventListener("DOMContentLoaded", function () {
             searchParams.append("page", pageNumber);
         }
         return currentURL.toString();
-    }
-
-    function encodeHTML(str) {
-        return str.replace(/&/g, "&amp;")
-                  .replace(/</g, "&lt;")
-                  .replace(/>/g, "&gt;")
-                  .replace(/"/g, "&quot;")
-                  .replace(/'/g, "&#39;");
     }
 });

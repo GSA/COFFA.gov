@@ -21,7 +21,8 @@ window.addEventListener('pageshow', function(event) {
         '/workforce-modernization',
         '/major-legislation',
         '/payment-integrity',
-        '/uniform-guidance-coffa'
+        '/uniform-guidance-coffa',
+        '/training-coffa/'
     ];
 
     var shouldReload = urlsToCheck.some(function(url) {
@@ -37,6 +38,9 @@ $('#return-top').on('click', function (e) {
     e.preventDefault();
     $([document.documentElement, document.body]).animate({
         scrollTop: 0
-    }, 200);
+    }, 200, function() {
+        document.body.setAttribute('tabindex', '-1');
+        document.body.focus();
+    });
     return false;
 });

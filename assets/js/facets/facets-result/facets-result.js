@@ -58,7 +58,7 @@
                 // Inserting the attribute to open a link in a new tab on each link
                 let relevant_course = item.relevant_courses[i];
                 if (typeof (relevant_course) === 'string' && relevant_course.indexOf('">') >= 0) {
-                    relevant_course = relevant_course.replace(/>/g, ' target="_blank" >');
+                    relevant_course = relevant_course.replace('>', ' target="_blank" >');
                 }
                 coursesMarkup += '<li role="listitem" class="card-content-color li-width">' + relevant_course + '</li>';
             }
@@ -70,7 +70,7 @@
                 // Inserting the attribute to open a link in a new tab on each link
                 let relevant_course = item.relevant_courses[i];
                 if (typeof (relevant_course) === 'string' && relevant_course.indexOf('">') >= 0) {
-                    relevant_course = relevant_course.replace(/>/g, ' target="_blank" >');
+                    relevant_course = relevant_course.replace('>', ' target="_blank" >');
                 }
                 coursesMarkup += '<li role="listitem" class="card-content-color li-width">' + relevant_course + '</li>';
             }
@@ -79,8 +79,7 @@
                 '<button class="show-more usa-button usa-button--outline border-0 bg-white" data-more-text="Show More" data-less-text="Show Less" data-index="'+ i +'" aria-label="Show More card number '+ i +'">Show More</button>\n' +
                 '</div>';
         }
-        var urlBase = window.location.href.split('/career-planning-tool/');
-        coursesDiv.innerHTML = '<div class="grid-row center-button"> <a href= "'+ urlBase[0] + '/training-resources/#series=' + item.series + '&level=GS ' + item.level +'&competency='+item.competency +'&competencygroup='+item.competency_group +'" class="usa-button usa-button--outline margin-bottom-1 button-border view-applicable-courses" aria-label="View applicable training courses for job series ' + item.series + ', GS level ' + item.level + ', competency ' + item.competency +'">VIEW APPLICABLE TRAINING COURSES</a></div>';
+        coursesDiv.innerHTML = '<p class="font-body-md card-display card-text-color"><strong>VENDOR COURSE LISTINGS:</strong></p>' + coursesMarkup;
         outerDiv3.append(coursesDiv);
 
         const selectButtonWrapper = document.createElement('div');
@@ -90,10 +89,6 @@
         selectButtonWrapper.innerHTML = '<label><input type="checkbox" value="' + item.permalink + '"' + (window.isSelected(item.permalink) ? ' checked' : '') + '> <span>SELECT FOR DOWNLOAD</span></label>'
     }
     const resultsContainer = document.getElementById("career-search-results");
-    var url = window.location.href.split('/training-resources/');
-        if(url.length > 1) {
-            return;
-    }
     resultsContainer.appendChild(outerDiv1);
      bindCoursesLink();
  }

@@ -116,10 +116,6 @@
      * @param {string} competencyTitle - The competency title (not used with buttons)
      */
     function createRemoveButtons(inputType, eventTargetId, button, competencyGroup, competencyTitle) {
-        var url = window.location.href.split('/training-resources/');
-        if(url.length > 1) {
-            return;
-        }
         if (inputType === "button") {
             facetGlobalVars.data.push({
                 id: eventTargetId,

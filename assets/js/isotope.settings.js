@@ -7,21 +7,22 @@ jQuery(document).ready(function ($) {
     let currentYear = new Date().getFullYear();
     const archivedYears = 7;
     const endYear = (currentYear - archivedYears);
-    let years = [];
+    let notArchivedYears = [];
     for (let i = currentYear; i >= endYear; i--) {
-        years.push(`.${i}`);
+        notArchivedYears.push(`.${i}:not(.archived)`);
     }
 
+    let notArchivedFilter = notArchivedYears.join(", ");
 
     // Add the years to the data-filter attribute of the filter-list-not-archived
-    $("#filter-list-not-archived").attr("data-filter", years.join(", "));
-    var initialFilter = years.join(", ");
+    $("#filter-list-not-archived").attr("data-filter", notArchivedFilter);
+    var initialFilter = notArchivedFilter;
 
     // Create initial hash
     var initHash = "archive_area=" + encodeURIComponent(initialFilter);
 
     // Apply the new hash to the URI, triggering onHahschange()
-    if (location.pathname == 'resources') {
+    if (location.pathname == '/coffa/resources') {
         location.hash = initHash;
     }
 
