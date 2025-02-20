@@ -87,7 +87,7 @@ primary_navigation:
 
 secondary_navigation:
 - name: Contact Us
-  url: "mailto:CFOC.support@gsa.gov"
+  url: "mailto:coffa.support@gsa.gov"
 
 secondary_navigation_frpc:
 - name: Contact Us
