@@ -80,8 +80,8 @@ primary_navigation:
   children:
   - name: Uniform Guidance232121
     url: "/uniform-guidance-coffa/"
-#     - name: Training
-#      url: "training-coffa/"
+  - name: Training
+    url: "#"
 - name: Resources
   url: "/resources/#focus_area=.federal-financial-assistance&sub_focus_area=*&type=*&source=*&fiscal_year=*"
 
