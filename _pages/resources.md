@@ -37,7 +37,7 @@ keyword: Resources
                 <!-- <li><a href="https://www.whitehouse.gov/omb/management/made-in-america/build-america-buy-america-act-federal-financial-assistance/">Build America, Buy America Act</a></li> -->
                 <!-- <li><a href="https://www.cfo.gov/coffa/assets/files/Revised-American-Rescue-Plan-Assistance-Listings_10-29-2021.pdf">The American Rescue Plan Act (ARP) of 2021 COVID-19 Financial Assistance Programs</a></li> -->
             </ul>
-        <h2 class="margin-bottom-0">Related Resources</h2>
+        <h2 class="margin-bottom-0" id="filterTop">Related Resources</h2>
     </div>
 </section>
 <section class="usa-graphic-list margin-bottom-4 margin-top-4">

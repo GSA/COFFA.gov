@@ -147,6 +147,11 @@ jQuery(document).ready(function ($) {
             $(".filter-list").find("[data-filter='" + hashFilter["focus_area"] + "'],[data-filter='" + hashFilter["sub_focus_area"] + "'],[data-filter='" + hashFilter["type"] + "'],[data-filter='" + hashFilter["source"] + "'][data-filter='" + hashFilter["type"] + "'],[data-filter='" + hashFilter["archive_area"] + "'],[data-filter='" + hashFilter["fiscal_year"] + "']").addClass("checked").attr("aria-checked", "true");
             //,[data-filter='" + hashFilter["status"] + "']
         }
+
+        window.scrollTo({
+            top: document.querySelector("#filterTop").offsetTop,
+            behavior: "smooth"
+        });
     } // onHahschange
 
     function getHashFilter() {
@@ -180,6 +185,7 @@ jQuery(document).ready(function ($) {
 
     // When the hash changes, run onHashchange
     window.onhashchange = onHashChange;
+    
 
     // When the page loads for the first time, run onHashChange
     onHashChange();
