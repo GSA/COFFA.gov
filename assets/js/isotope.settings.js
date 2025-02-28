@@ -121,6 +121,10 @@ jQuery(document).ready(function ($) {
     function onHashChange() {
         // Current hash value
         var hashFilter = getHashFilter();
+        window.scrollTo({
+            top: document.querySelector("#filterTop").offsetTop,
+            behavior: "smooth"
+        });
         // Concatenate priority_area and type for Isotope filtering
         var theFilter = hashFilter["focus_area"] + hashFilter["sub_focus_area"] + hashFilter["type"] + hashFilter["source"] + hashFilter["fiscal_year"] + hashFilter["archive_area"];
 
@@ -148,10 +152,7 @@ jQuery(document).ready(function ($) {
             //,[data-filter='" + hashFilter["status"] + "']
         }
 
-        window.scrollTo({
-            top: document.querySelector("#filterTop").offsetTop,
-            behavior: "smooth"
-        });
+     
     } // onHahschange
 
     function getHashFilter() {
