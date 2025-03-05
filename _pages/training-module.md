@@ -3,6 +3,7 @@ layout: coffa-default
 title: Training Module
 permalink: /training-coffa
 description:
+published: False
 ---
 
 
