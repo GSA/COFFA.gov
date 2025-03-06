@@ -121,6 +121,10 @@ jQuery(document).ready(function ($) {
     function onHashChange() {
         // Current hash value
         var hashFilter = getHashFilter();
+        window.scrollTo({
+            top: document.querySelector("#filterTop").offsetTop,
+            behavior: "smooth"
+        });
         // Concatenate priority_area and type for Isotope filtering
         var theFilter = hashFilter["focus_area"] + hashFilter["sub_focus_area"] + hashFilter["type"] + hashFilter["source"] + hashFilter["fiscal_year"] + hashFilter["archive_area"];
 
@@ -147,6 +151,8 @@ jQuery(document).ready(function ($) {
             $(".filter-list").find("[data-filter='" + hashFilter["focus_area"] + "'],[data-filter='" + hashFilter["sub_focus_area"] + "'],[data-filter='" + hashFilter["type"] + "'],[data-filter='" + hashFilter["source"] + "'][data-filter='" + hashFilter["type"] + "'],[data-filter='" + hashFilter["archive_area"] + "'],[data-filter='" + hashFilter["fiscal_year"] + "']").addClass("checked").attr("aria-checked", "true");
             //,[data-filter='" + hashFilter["status"] + "']
         }
+
+     
     } // onHahschange
 
     function getHashFilter() {
@@ -180,6 +186,7 @@ jQuery(document).ready(function ($) {
 
     // When the hash changes, run onHashchange
     window.onhashchange = onHashChange;
+    
 
     // When the page loads for the first time, run onHashChange
     onHashChange();
