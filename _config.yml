@@ -97,9 +97,7 @@ secondary_navigation_cxo:
 - name: Contact Us
   url: "mailto:coffa.support@gsa.gov"
 
-secondary_navigation_jfmip:
-- name: Contact Us
-  url: "mailto:coffa.support@gsa.gov"
+
 
 secondary_navigation_coffa:
 - name: Contact Us
@@ -137,7 +135,6 @@ primary_navigation_coffa:
 - name: Resources
   url: "/resources/#focus_area=.federal-financial-assistance&sub_focus_area=*&type=*&source=*&fiscal_year=*"
 
-jfmip-navigation: #  - name: Current Initiatives
 
 #    url: /
 #    children:
@@ -151,7 +148,6 @@ footer:
     email: CFOC.support@gsa.gov
     frpc-email: Realpropertypolicy@gsa.gov
     cxo-email: cxofellowship@gsa.gov
-    jfmip-email: JFMIPCPE@gao.gov
     coffa-email: COFFA.support@gsa.gov
     text: General Services Administration & the Office of Management and Budget
 # Search.gov configuration
