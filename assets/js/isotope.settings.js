@@ -108,7 +108,7 @@ jQuery(document).ready(function ($) {
         
 
         // Create new hash
-        var newHash = "focus_area=" + encodeURIComponent(filters["focus_area"]) + "&sub_focus_area=" + encodeURIComponent(filters["sub_focus_area"]) + "&type=" + encodeURIComponent(filters["type"]) + "&source=" + encodeURIComponent(filters["source"]) + "&fiscal_year=" + encodeURIComponent(filters["fiscal_year"]) + "&archive_area=" + encodeURIComponent(filters["archive_area"]);
+        var newHash = "&focus_area=" + encodeURIComponent(filters["focus_area"]) + "&sub_focus_area=" + encodeURIComponent(filters["sub_focus_area"]) + "&type=" + encodeURIComponent(filters["type"]) + "&source=" + encodeURIComponent(filters["source"]) + "&fiscal_year=" + encodeURIComponent(filters["fiscal_year"]) + "&archive_area=" + encodeURIComponent(filters["archive_area"]);
         // + "&status=" + encodeURIComponent( filters["status"] );
         // If sort value exists, add it to hash
         if (sortValue) {
