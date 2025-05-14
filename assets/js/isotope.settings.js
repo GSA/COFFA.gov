@@ -9,9 +9,8 @@ jQuery(document).ready(function ($) {
     const endYear = (currentYear - archivedYears);
     let notArchivedYears = [];
     for (let i = currentYear; i >= endYear; i--) {
-        notArchivedYears.push(`.${i}:not(.archived)`);
+        notArchivedYears.push(.${i}:not(.archived));
     }
-
     let notArchivedFilter = notArchivedYears.join(", ");
 
     // Add the years to the data-filter attribute of the filter-list-not-archived
@@ -21,7 +20,7 @@ jQuery(document).ready(function ($) {
     // Create initial hash
     var initHash = "archive_area=" + encodeURIComponent(initialFilter);
 
-    // Apply the new hash to the URI, triggering onHahschange()
+    // Apply the new hash to the URI, triggering onHashchange()
     if (location.pathname == '/coffa/resources') {
         location.hash = initHash;
     }
@@ -31,9 +30,7 @@ jQuery(document).ready(function ($) {
         // options
         itemSelector: ".policy",
         layoutMode: "masonry",
-        getSortData: {
-            date: "p"
-        },
+        getSortData: { date: "p" },
         filter: initialFilter,
     });
 
@@ -46,20 +43,19 @@ jQuery(document).ready(function ($) {
         }
     }
 
-
-
     // Alphabetical sort
     // Sort items alphabetically based on course title
     var sortValue = false;
     $(".sort").on("click", function () {
         // Get current URI hash
         var currentHash = location.hash;
+
         // If button is currently unchecked:
         if ($(this).hasClass("checked")) {
             // Set sort to false
             sortValue = false;
             // Remove sort attribute in hash
-            location.hash = currentHash.replace(/&sort=([^&]+)/i, "");
+            location.hash = currentHash.replace(/&sort=(\[^&\]+)/i, "");
         } else {
             // Set sortValue to current sort value
             sortValue = $(this).attr("data-sort-value");
@@ -86,15 +82,19 @@ jQuery(document).ready(function ($) {
         filters["source"] = hashFilter["source"];
         filters["fiscal_year"] = hashFilter["fiscal_year"];
         filters["archive_area"] = hashFilter["archive_area"];
-
         // filters["status"] = hashFilter["status"];
+
         // data-filter attribute of clicked button
         var currentFilter = $(this).attr("data-filter");
+
         // Navigation group (priority_area or type) as object
         var $navGroup = $(this).parents(".filter-list");
+
         // data-filter-group key for the current nav group
         var filterGroup = $navGroup.attr("data-filter-group");
+
         // If the current data-filter attribute matches the current filter,
+
         if (currentFilter == hashFilter["focus_area"] || currentFilter == hashFilter["sub_focus_area"] || currentFilter == hashFilter["type"] || currentFilter == hashFilter["source"] || currentFilter == hashFilter["fiscal_year"] || currentFilter == hashFilter["archive_area"]) {
             // Reset group filter as the user has unselected the button
             filters[filterGroup] = "*";
