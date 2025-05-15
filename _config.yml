@@ -83,7 +83,7 @@ primary_navigation:
   - name: Training
     url: "#"
 - name: Resources
-  url: "/resources/#focus_area=.federal-financial-assistance&sub_focus_area=*&type=*&source=*&fiscal_year=*"
+  url: "/resources/#focus_area=*&sub_focus_area=*&type=*&source=*&fiscal_year=*"
 
 secondary_navigation:
 - name: Contact Us
@@ -133,7 +133,7 @@ primary_navigation_coffa:
 #     - name: Training
 #      url: "training-coffa/"
 - name: Resources
-  url: "/resources/#focus_area=.federal-financial-assistance&sub_focus_area=*&type=*&source=*&fiscal_year=*"
+  url: "/resources/#focus_area=*&sub_focus_area=*&type=*&source=*&fiscal_year=*"
 
 
 #    url: /
