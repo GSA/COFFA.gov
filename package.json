@@ -14,7 +14,7 @@
     "jquery": "3.6.4",
     "react-redux": "^7.2.9",
     "striptags": "^3.2.0",
-    "dompurify": "^3.2.3"
+    "dompurify": "^3.2.4"
   },
   "devDependencies": {
     "a11y": "^0.5.1",
