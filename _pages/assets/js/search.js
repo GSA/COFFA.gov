@@ -63,7 +63,13 @@ document.addEventListener("DOMContentLoaded", function () {
                                 ]["title"]
                                 .replace(/\uE000/g, '<span class="text-bold">')
                                 .replace(/\uE001/g, "</span>")}</a>
-            <div class="text-green"> ${posts.web.results[item]["url"]} </div>
+                        <div class="text-base margin-top-05 margin-bottom-1">
+                            
+                <span class="text-gray">${posts.web.results[item]["url"]}</span>
+                </div>
+
+                    
+            <div class=""> ${posts.web.results[item]["url"]} </div>
             <div> ${posts.web.results[item]["snippet"]
                                 .replace(/\uE000/g, '<span class="text-bold">')
                                 .replace(/\uE001/g, "</span>")} </div>
@@ -110,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
             Math.ceil(totalResults / resultsPerPage) +
             "</span>";
         if (totalResults > (page * resultsPerPage)) {
-            pagerLinks += '<a href="' + getLinkToPage(parseInt(page) + 1) + '" aria-label="Next page">Next >>></a>';
+            pagerLinks += '<a href="' + getLinkToPage(parseInt(page) + 1) + '" aria-label="Next page">Next >></a>';
         }
         pagerLinks += '<div class="usa-footer__contact-info grid-row grid-gap"><div class="grid-col-auto"><p class="margin-top-0">Powered by Search.gov</p></div></div>';
         pager.innerHTML = pagerLinks;
