@@ -63,13 +63,9 @@ document.addEventListener("DOMContentLoaded", function () {
                                 ]["title"]
                                 .replace(/\uE000/g, '<span class="text-bold">')
                                 .replace(/\uE001/g, "</span>")}</a>
-                        <div class="text-base margin-top-05 margin-bottom-1">
-                            
-                <span class="text-gray">${posts.web.results[item]["url"]}</span>
+                <div class="text-base margin-top-05 margin-bottom-1">
+                    <span class="text-gray">${posts.web.results[item]["url"]}</span>
                 </div>
-
-                    
-            <div class=""> ${posts.web.results[item]["url"]} </div>
             <div> ${posts.web.results[item]["snippet"]
                                 .replace(/\uE000/g, '<span class="text-bold">')
                                 .replace(/\uE001/g, "</span>")} </div>
