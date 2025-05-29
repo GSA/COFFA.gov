@@ -110,8 +110,9 @@ document.addEventListener("DOMContentLoaded", function () {
             Math.ceil(totalResults / resultsPerPage) +
             "</span>";
         if (totalResults > (page * resultsPerPage)) {
-            pagerLinks += '<a href="' + getLinkToPage(parseInt(page) + 1) + '" aria-label="Next page">Next >></a>';
+            pagerLinks += '<a href="' + getLinkToPage(parseInt(page) + 1) + '" aria-label="Next page">Next >>></a>';
         }
+        pagerLinks += '<div class="usa-footer__contact-info grid-row grid-gap"><div class="grid-col-auto"><p class="margin-top-0">Powered by Search.gov</p></div></div>';
         pager.innerHTML = pagerLinks;
     }
 
