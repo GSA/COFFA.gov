@@ -108,6 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         pager.innerHTML = "";
         
+        
         if (page > 1){
 		    pagerLinks += '<a href="' + getLinkToPage(1) + '" aria-label="First page" class="pager-button">First</a>';
         }
