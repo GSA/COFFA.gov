@@ -9,13 +9,11 @@ width of page {% endcomment %}
   <!--</head>-->
 
   {% include meta.html %}
-
   <body class="site-margin">
     {% include header.html %} {% include menu_coffa.html
     primary_navigation=site.primary_navigation_coffa
-    secondary_navigation=site.secondary_navigation_coffa page_type='coffa' %} {%
-    include alert.html %}
-    <main id="main-content">{{ content }}</main>
+    secondary_navigation=site.secondary_navigation_coffa page_type='coffa' %}
+    <main id="main-content">{% include alert.html %} {{ content }}</main>
 
     {% include footer-coffa.html page_type='coffa' %} {% include scripts.html %}
   </body>
